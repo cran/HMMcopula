@@ -19,30 +19,33 @@
 #'
 #'@export
 SimHMMCop<-function(Q, family, KendallTau, n, DoF){
-  if(dim(Q)[2] <= 1){
-    warning("Transition matrix not assigned, will simulate one regime copula.")
-  }else if(nargs()<=3 ){
+  if(is.null(dim(Q))){
+    QQ0 = matrix(Q)
+    reg = dim(QQ0)[1]
+  } else {
+    reg = dim(Q)[2]
+  }
+
+  #if(dim(Q)[2] <= 1){
+    # warning("Transition matrix not assigned, will simulate one regime copula.")
+  #}else
+  if(nargs()<=3 ){
     stop("Requires at least four input arguments.")
   } else if(nargs()<=4 & family == 't'){
     stop("Requires at five input arguments.")
   }
 
-  # if(is.null(dim(DoF))){
-  #   DoF0 = matrix(DoF)
-  #   regd = dim(DoF0)[1]
-  # } else {
-  #   regd = dim(DoF)[2]
-  # }
 
-  Nregimes = dim(Q)[2]
-  if(Nregimes >=2){
+
+
+  if(reg >=2){
     MC = SimMarkovChain(Q,n)
   }else  MC = rep(1,n+1)
-  alpha = rep(0,Nregimes)
-  Sim   = matrix(0,n,2*Nregimes)
+  alpha = rep(0,reg)
+  Sim   = matrix(0,n,2*reg)
   SimData = matrix(0,n,2)
 
-  for(k in 1:Nregimes){
+  for(k in 1:reg){
 
     switch(family,
            "gaussian" = {
@@ -73,7 +76,7 @@ SimHMMCop<-function(Q, family, KendallTau, n, DoF){
   switch(family,
          "gaussian" = {
 
-           for( k in 1:Nregimes){
+           for( k in 1:reg){
              u = copula::rCopula(n,copula::normalCopula(alpha[k], dim = 2))
              Sim[,(2*k-1):(2*k)] = u
            }
@@ -81,7 +84,7 @@ SimHMMCop<-function(Q, family, KendallTau, n, DoF){
          },
 
          "t" = {
-           for(k in 1:Nregimes){
+           for(k in 1:reg){
              #if (regd == 1){
                u = copula::rCopula(n, copula::tCopula(alpha[k], dim = 2,df = DoF))
              #} else {
@@ -92,21 +95,21 @@ SimHMMCop<-function(Q, family, KendallTau, n, DoF){
          },
 
          "clayton" = {
-           for( k in 1:Nregimes){
+           for( k in 1:reg){
              u = copula::rCopula(n,copula::claytonCopula(alpha[k], dim = 2))
              Sim[,(2*k-1):(2*k)] = u
            }
          },
 
          "frank" = {
-           for( k in 1:Nregimes){
+           for( k in 1:reg){
              u = copula::rCopula(n,copula::frankCopula(alpha[k], dim = 2))
              Sim[,(2*k-1):(2*k)] = u
            }
          },
 
          "gumbel" = {
-           for( k in 1:Nregimes){
+           for( k in 1:reg){
              u = copula::rCopula(n,copula::gumbelCopula(alpha[k], dim = 2))
              Sim[,(2*k-1):(2*k)] = u
            }

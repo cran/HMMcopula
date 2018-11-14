@@ -45,7 +45,9 @@ if(nargs()<=3){ stop('Requires at least four input arguments.')
 if(reg >= 2){
   MC =  sample(1:reg, n,TRUE, t(Q)) #simulated regimes
 
-} else MC[1:(n+1),1] = 1  # in the case of one regime copula
+} else {
+  MC = matrix(0,n+1)
+  MC[1:(n+1),1] = 1 } # MC[1:(n+1),1] = 1  # in the case of one regime copula
 
 alpha = rep(0,reg)
 Sim   = matrix(0,n,2*reg)

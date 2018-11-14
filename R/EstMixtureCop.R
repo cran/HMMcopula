@@ -17,7 +17,7 @@
 #'@return \item{U}{(n x 2) matrix of Rosenblatt transforms}
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 #'
-#'
+#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
 #'
 #'
 #'@export
@@ -185,7 +185,11 @@ EMstep <- function(y,theta,Q,family){
              }
            }
 
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "t" = {
@@ -202,7 +206,11 @@ EMstep <- function(y,theta,Q,family){
              }
            }
 
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "clayton" = {
@@ -218,7 +226,11 @@ EMstep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "frank" = {
@@ -234,7 +246,11 @@ EMstep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "gumbel" = {
@@ -250,7 +266,11 @@ EMstep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          }
   )
   out = list(theta_new=theta_new, Qnew=Qnew, eta=eta)

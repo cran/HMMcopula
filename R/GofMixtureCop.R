@@ -20,7 +20,7 @@
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 # @author  By Bruno Remillard, Nov 28, 2010
 #'
-#'
+#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
 #'
 #'@export
 GofMixtureCop<-function(R,reg,family,max_iter,eps,n_sample,n_cores){

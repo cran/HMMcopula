@@ -18,6 +18,8 @@
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 #'@return \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 #'
+#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
+#'
 #'
 #'@examples Q <- matrix(c(0.8, 0.2, 0.3, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
 #'data <- SimHMMCop(Q, 'clayton', kendallTau, 10)$SimData;
@@ -126,6 +128,9 @@ EstHMMCop<-function(y,reg,family,max_iter,eps){
   w00 = rbind(eta00,eta) %*% Q
 
   W   = w00[1:(dim(w00)[1]-1),]
+  if (reg == 1){
+    W = data.frame(as.list(W))
+  }
 
   U=matrix(0,n,2)
   U[,1]= y[,1]
@@ -226,16 +231,22 @@ EMStep <- function(y,theta,Q,family){
   nu = colMeans(lambda)
   Qnew = Q
 
-  for(j in 1:r){
-    Lambda2_1 = matrix(Lambda[j,1,], n, 1)
-    Lambda2_2 = matrix(Lambda[j,2,], n, 1)
-    Lambda2 = matrix(c(Lambda2_1,Lambda2_2),n,2)
-    sv = apply(Lambda2, 2, sum)
-    #   sv = rowSums(Lambda2, dims=2)
-    #   sv = rowSums(Lambda[j,,])
-    ssv = sum(sv)
-    Qnew[j,] = sv / ssv
-  }
+  if (r >= 2){
+    for(j in 1:r){
+      Lambda2_1 = matrix(Lambda[j,1,], n, 1)
+      Lambda2_2 = matrix(Lambda[j,2,], n, 1)
+      Lambda2 = matrix(c(Lambda2_1,Lambda2_2),n,2)
+      sv = apply(Lambda2, 2, sum)
+      #   sv = rowSums(Lambda2, dims=2)
+      #   sv = rowSums(Lambda[j,,])
+      ssv = sum(sv)
+      Qnew[j,] = sv / ssv
+    }
+  } #else if (r < 2){
+    #Qnew = 1;
+  #}
+
+
 
 
   # finding theta
@@ -254,7 +265,11 @@ EMStep <- function(y,theta,Q,family){
              }
            }
 
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "t" = {
@@ -271,7 +286,11 @@ EMStep <- function(y,theta,Q,family){
              }
            }
 
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "clayton" = {
@@ -287,7 +306,11 @@ EMStep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "frank" = {
@@ -303,7 +326,11 @@ EMStep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          },
 
          "gumbel" = {
@@ -319,7 +346,11 @@ EMStep <- function(y,theta,Q,family){
                return(log_likelihood)
              }
            }
-           theta_new =  stats::optim(par=theta,fun, method = "Nelder-Mead")$par
+           if (r>= 2){
+             theta_new =  stats::optim(par= theta,fun, method = "Nelder-Mead")$par
+           } else if (r == 1){
+             theta_new =  stats::optim(par= theta,fun, method = "L-BFGS-B")$par
+           }
          }
   )
   out = list(nu=nu, theta_new=theta_new, Qnew=Qnew, eta=eta, eta_bar=eta_bar, lambda=lambda, Lambda=Lambda)

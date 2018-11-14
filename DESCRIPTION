@@ -2,7 +2,7 @@ Package: HMMcopula
 Type: Package
 Title: Markov Regime Switching Copula Models Estimation and Goodness of
         Fit
-Version: 1.0.1
+Version: 1.0.2
 Author: Mamadou Yamar Thioub <mamadou-yamar.thioub@hec.ca>, 
     Bouchra Nasri <bouchra.nasri@mail.mcgill.ca>, 
     Romanic Pieugueu <romanic.pieugueu@gerad.ca>, and
@@ -18,8 +18,8 @@ License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Depends: matrixcalc, mvtnorm, foreach, doParallel, copula
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2018-10-19 17:13:00 UTC; abdoulaye
+Packaged: 2018-11-14 02:01:38 UTC; 49009427
 Repository: CRAN
-Date/Publication: 2018-10-28 22:30:13 UTC
+Date/Publication: 2018-11-14 05:30:03 UTC

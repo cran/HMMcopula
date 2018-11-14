@@ -21,6 +21,9 @@
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 #'@return \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 #'
+#'
+#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
+#'
 #@examples Q <- matrix(c(0.8, 0.2, 0.3, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
 #data <- SimHMMCop(Q, 'clayton', kendallTau, 10)$SimData;
 #gof <- GofHMMCop(data,2,'clayton',10000,0.0001,1)
