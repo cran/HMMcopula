@@ -13,7 +13,7 @@
 #'@return \item{MC}{Markov chain regimes}
 #'@return \item{alpha}{parameters alpha}
 #'
-#'@examples Q <- matrix(c(0.8, 0.2, 0.3, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
+#'@examples Q <- matrix(c(0.8, 0.3, 0.2, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
 #'simulations <- SimHMMCop(Q, 'gumbel', kendallTau, 300)
 #'
 #'
