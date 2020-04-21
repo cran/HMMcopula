@@ -29,6 +29,7 @@
 #gof <- GofHMMCop(data,2,'clayton',10000,0.0001,1)
 #'
 #'
+#'
 #'@export
 #'
 GofHMMCop <-function(R, reg, family, max_iter ,eps ,n_sample,n_cores){
@@ -56,7 +57,7 @@ GofHMMCop <-function(R, reg, family, max_iter ,eps ,n_sample,n_cores){
     cvm_sim1[i] = result[[i]]$cvm_sim
   }
 
-  pvalue = 100*mean( cvm_sim1 > cvm_est)
+  pvalue = 100*mean( na.omit(cvm_sim1 > cvm_est))
 
   out = list(  pvalue =  pvalue, theta = theta, Q = Q, eta = eta, nu = nu, tau = tau, df = df, U = U, cvm_est = cvm_est, W = W)
   return(out)

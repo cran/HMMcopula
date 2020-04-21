@@ -22,6 +22,8 @@
 #'
 #@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
 #'
+#'
+#'
 #'@export
 GofMixtureCop<-function(R,reg,family,max_iter,eps,n_sample,n_cores){
   registerDoParallel(n_cores)
@@ -54,7 +56,7 @@ GofMixtureCop<-function(R,reg,family,max_iter,eps,n_sample,n_cores){
   #}
 
   #output
-  pvalue = 100*mean( cvm_sim1 > cvm_est)
+  pvalue = 100*mean( na.omit(cvm_sim1 > cvm_est))
 
   out = list( pvalue=  pvalue, theta=theta, Q=Q, eta=eta, tau=tau, df=df, U=U, cvm_est=cvm_est)
   return(out)
