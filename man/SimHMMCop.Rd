@@ -25,7 +25,7 @@ SimHMMCop(Q, family, KendallTau, n, DoF)
 \item{alpha}{parameters alpha}
 }
 \description{
-This function simulates observation from a bivariate Markov regime switching copula model
+Simulaion of values from a bivariate Markov regime switching copula model
 }
 \examples{
 Q <- matrix(c(0.8, 0.3, 0.2, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;

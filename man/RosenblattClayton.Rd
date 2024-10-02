@@ -15,5 +15,5 @@ RosenblattClayton(u, theta)
 \item{R}{Rosenblatt transform}
 }
 \description{
-This function computes the Rosenblatt transform fot the Clayton copula
+Computation of the Rosenblatt transform fot Clayton's copula
 }

@@ -1,6 +1,6 @@
 #'@title Rosenblatt transform for Student copula
 #'
-#' @description This function computes the Rosenblatt transform fot the Student copula
+#'@description Computation of the Rosenblatt transform for the Student copula
 #'
 #'@param u   (n x d) matrix of pseudos-observations (normalized ranks)
 #'@param rho (d x d) correlation matrix

@@ -1,6 +1,6 @@
 #'@title Alpha estimation
 #'
-#'@description This function computes the  unconstrainted parameter alpha for given Kendall's tau value
+#'@description Unconstrainted parameter for a given Kendall's tau.
 #'
 #'@param family    'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
 #'@param tau        Kendall's tau of the copula family

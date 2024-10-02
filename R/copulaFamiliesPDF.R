@@ -1,6 +1,6 @@
 #'@title COPULAPDF Probability density function for a copula.
 #'
-#'COPULAPDF  probability density function for a copula with linear correlation parameters RHO and
+#'@description COPULAPDF  probability density function for a copula with linear correlation parameters RHO and
 #'
 #'@param family  copula familly= "gaussian" , "t" , "clayton" , "frank" , "gumbel"
 #'@param u  is an N-by-P matrix of values in [0,1], representing N points in the P-dimensional unit hypercube
@@ -29,7 +29,7 @@
 #'     U1=matrix(rep(u,length(u)),nrow=length(u),byrow = TRUE); U2=t(U1)
 #'    F = copulaFamiliesPDF('clayton',cbind(c(U1), c(U2)),1)
 #'
-#'@import mvtnorm matrixcalc foreach doParallel copula
+#'@import mvtnorm foreach doParallel copula
 #'
 #'
 #'@export
@@ -72,8 +72,9 @@ copulaFamiliesPDF<-function(family,u,...){
                         Rho[is.na(Rho)]=1
                       }
                       R<-try(chol(Rho),silent = TRUE)
-                      res <- try(matrixcalc:: is.positive.definite(Rho),silent = TRUE)
-                      if(class(res) == "try-error"){ stop("Singular Correlation Matrix for Rho")}
+                      res <- try(eigen$values(Rho)>0,silent = TRUE)
+                      #res <- try(eigen$values(Rho)>0matrixcalc:: is.positive.definite(Rho),silent = TRUE)
+                      if(inherits(res,"try-error")){ stop("Singular Correlation Matrix for Rho")}
                       x = stats::qnorm(u)
                       logSqrtDetRho = sum(log(diag(R)))
                       z = x %*% solve(R)
@@ -95,8 +96,9 @@ copulaFamiliesPDF<-function(family,u,...){
                         Rho[is.na(Rho)]=1
                       }
                       R<-try(chol(Rho),silent = TRUE)
-                      res <- try(matrixcalc:: is.positive.definite(Rho),silent = TRUE)
-                      if(class(res) == "try-error"){ stop("Singular Correlation Matrix for Rho")}
+                      res <- try(eigen$values(Rho)>0,silent = TRUE)
+                      #res <- try(matrixcalc:: is.positive.definite(Rho),silent = TRUE)
+                      if(inherits(res,"try-error")){ stop("Singular Correlation Matrix for Rho")}
 
 
                       if(length(alpha2)<1){ stop("Missing Degree of freedom")}

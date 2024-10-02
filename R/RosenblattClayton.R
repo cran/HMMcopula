@@ -1,6 +1,6 @@
 #'@title Rosenblatt transform for Clayton copula
 #'
-#'@description This function computes the Rosenblatt transform fot the Clayton copula
+#'@description Computation of the Rosenblatt transform fot Clayton's copula
 #'
 #'@param u   (n x d) matrix of pseudos-observations (normalized ranks)
 #'@param theta parameter of the Clayton copula

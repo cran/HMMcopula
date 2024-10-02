@@ -7,13 +7,16 @@
 SimMarkovChain(Q, n, eta0)
 }
 \arguments{
-\item{Q}{Transition probality matrix (d x d)}
+\item{Q}{Transition probability matrix (d x d)}
 
 \item{n}{number of simulated vectors}
 
 \item{eta0}{variable eta}
 }
+\value{
+\item{x}{Simulated Markov chain sequence}
+}
 \description{
-This function generates a Markov chain X(1), ..., X(n) with transition matrix Q,
-starting from a state eta0 or the uniform distribution on {1,..., r}
+Simulation of  n consecutive  values of a Markov chain with transition matrix Q, 
+starting from a state eta0 or the uniform distribution on the set 1,..., r.
 }

@@ -15,5 +15,5 @@ KendallTau(family, alpha)
 \item{tau}{estimated Kendall's tau}
 }
 \description{
-This function computes the Kendall's tau of a copula family with a unconstrainted parameter alpha.
+Computation of Kendall's tau of a copula family with an unconstrainted parameter alpha.
 }

@@ -1,6 +1,6 @@
 #'@title Estimation of bivariate Markov regime switching bivariate copula model
 #'
-#' @description This function estimates parameters from a bivariate Markov regime switching bivariate copula model
+#'@description Estimation of parameters from a bivariate Markov regime switching bivariate copula model
 #'
 #'@param y   (nx2) data matrix (observations or residuals) that will be transformed to pseudo-observations
 #'@param family    'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
@@ -8,7 +8,7 @@
 #'@param max_iter  maximum number of iterations of the EM algorithm
 #'@param eps precision (stopping criteria); suggestion 0.0001.
 #'
-#@author Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018
+#'@author Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018
 #'@return \item{theta}{(1 x reg) estimated parameter of the copula according to CRAN copula package (except for Frank copula, where theta = log(theta_R_Package)) for each regime (except for degrees of freedom)}
 #'@return \item{dof}{estimated degree of freedom, only for the Student copula}
 #'@return \item{Q}{(reg x reg) estimated transition matrix}
@@ -18,7 +18,7 @@
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 #'@return \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 #'
-#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
+#'@references <doi::10.1002/cjs.11534>
 #'
 #'
 #'@examples Q <- matrix(c(0.8, 0.3, 0.2, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;

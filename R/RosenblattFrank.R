@@ -1,6 +1,6 @@
 #'@title Rosenblatt transform for Frank copula
 #'
-#'@description This function computes the Rosenblatt transform fot the Frank copula
+#'@description Computation of the Rosenblatt transform for Frank's copula
 #'
 #'@param U   (n x d) matrix of pseudos-observations (normalized ranks)
 #'@param theta parameter of the Frank copula

@@ -1,6 +1,6 @@
 #'@title Kendall's tau of a copula
 #'
-#'@description This function computes the Kendall's tau of a copula family with a unconstrainted parameter alpha.
+#'@description Computation of Kendall's tau of a copula family with an unconstrainted parameter alpha.
 #'
 #'@param family "gaussian" , "t" , "clayton" , "frank" , "gumbel"
 #'@param alpha  unconstrainted parameters of the copula family

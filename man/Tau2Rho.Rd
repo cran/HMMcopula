@@ -15,5 +15,5 @@ Tau2Rho(family, theta)
 \item{rho}{estimated Spearman's rho}
 }
 \description{
-This function estimates the Spearman's rho corresponding to a constrainted (matlab) parameter theta for a copula family.
+Value  of Spearman's rho corresponding to a constrainted (matlab) parameter theta for a copula family.
 }

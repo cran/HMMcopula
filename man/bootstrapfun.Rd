@@ -2,7 +2,7 @@
 % Please edit documentation in R/bootstrapfun.R
 \name{bootstrapfun}
 \alias{bootstrapfun}
-\title{Bootstrap for the bivariate copula models}
+\title{Bootstrap function for a  bivariate copula models}
 \usage{
 bootstrapfun(Q, family, tau, n, df, max_iter, eps, HMM)
 }
@@ -15,16 +15,31 @@ bootstrapfun(Q, family, tau, n, df, max_iter, eps, HMM)
 
 \item{n}{number of simulated vectors}
 
+\item{df}{vector of degree of freedom (d x 1), only for the Student copula.}
+
+\item{max_iter}{maximum number of iterations for estimation}
+
 \item{eps}{precision (e.g 0.00001);}
 
 \item{HMM}{1 (if HMM) , 0 (if mixture);}
+}
+\value{
+\item{theta1}{Estimated copula parameters}
 
-\item{DoF}{vector of degree of freedom (d x 1), only for the Student copula.}
+\item{Q1}{Estimated transition matrix}
 
-\item{n_sample}{number of bootstrap (e.g 1000);}
+\item{eta1}{Estimated probabilites for regimes}
+
+\item{tau1}{Estimated Kendall's tau}
+
+\item{dof1}{Estimated degrees of freedom for the Student copula}
+
+\item{Usim}{Estimated pseudo-observations}
+
+\item{cvm_sim}{Estimated Cramer-von Mises statistic}
 }
 \description{
-Bootstrap for the bivariate copula models
+Bootstrapping function needed for parallel computing
 }
 \author{
 Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018

@@ -33,5 +33,11 @@ EstMixtureCop(y, reg, family, max_iter, eps)
 \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 }
 \description{
-This function estimates parameters from a mixture bivariate copula model
+Estimation of parameters from a mixture of  bivariate copula models
+}
+\references{
+<doi::10.1002/cjs.11534>
+}
+\author{
+Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018
 }

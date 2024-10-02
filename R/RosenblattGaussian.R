@@ -1,6 +1,6 @@
 #'@title Rosenblatt transform for Gaussian copula
 #'
-#' @description This function computes the Rosenblatt transform fot the Gaussian copula
+#'@description Computation of the Rosenblatt transform for the Gaussian copula
 #'
 #'@param u   (n x d) matrix of pseudos-observations (normalized ranks)
 #'@param rho (d x d) correlation matrix, or the correlation coefficient (if, d = 2)

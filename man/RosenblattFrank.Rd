@@ -15,5 +15,5 @@ RosenblattFrank(U, theta)
 \item{R}{Rosenblatt transform}
 }
 \description{
-This function computes the Rosenblatt transform fot the Frank copula
+Computation of the Rosenblatt transform for Frank's copula
 }

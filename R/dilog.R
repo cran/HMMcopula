@@ -1,6 +1,6 @@
 #'@title Dilogarithm function
 #'
-#'@description This function computes the dilogarithm of a number.
+#'@description Computation of the dilogarithm function by nemerical integration.
 #'
 #'@param x a real number
 #'

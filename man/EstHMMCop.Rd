@@ -35,7 +35,7 @@ EstHMMCop(y, reg, family, max_iter, eps)
 \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 }
 \description{
-This function estimates parameters from a bivariate Markov regime switching bivariate copula model
+Estimation of parameters from a bivariate Markov regime switching bivariate copula model
 }
 \examples{
 Q <- matrix(c(0.8, 0.3, 0.2, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
@@ -43,4 +43,10 @@ data <- SimHMMCop(Q, 'clayton', kendallTau, 10)$SimData;
 estimations <- EstHMMCop(data,2,'clayton',10000,0.0001)
 
 
+}
+\references{
+<doi::10.1002/cjs.11534>
+}
+\author{
+Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018
 }

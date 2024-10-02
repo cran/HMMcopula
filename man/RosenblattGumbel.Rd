@@ -15,5 +15,5 @@ RosenblattGumbel(U, theta)
 \item{R}{Rosenblatt transform}
 }
 \description{
-This function computes the Rosenblatt transform fot the Gumbel copula
+Computation of the Rosenblatt transform for Gumbel's copula
 }

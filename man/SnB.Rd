@@ -13,5 +13,5 @@ SnB(E)
 \item{Sn}{Cramer-von Mises statistic}
 }
 \description{
-This function computes the Cramer-von Mises statistic SnB for GOF based on the Rosenblatt transform
+Computation of the Cramer-von Mises statistic SnB for GOF based on the Rosenblatt transform
 }

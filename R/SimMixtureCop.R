@@ -1,13 +1,12 @@
 #'@title Simulation of bivariate mixture copula model
 #'
-#' @description This function simulates observation from a bivariate mixture copula model
+#'@description Simulation of observations from a bivariate mixture copula model
 #'
 #'@param Q Weights vector (1 x component);
 #'@param family    'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
 #'@param  KendallTau   Kendall's rank correlation
 #'@param  n    number of simulated vectors
 #'@param DoF vector of degree of freedom only for the Student copula
-#@param DoF vector of degree of freedom (1 x d) or one degree of freedom (for all compenents), only for the Student copula
 #'
 #'@return \item{SimData}{Simulated Data}
 #'@return \item{MC}{Markov chain regimes}

@@ -1,13 +1,12 @@
 #'@title Simulation of bivariate Markov regime switching copula model
 #'
-#' @description This function simulates observation from a bivariate Markov regime switching copula model
+#'@description Simulaion of values from a bivariate Markov regime switching copula model
 #'
 #'@param Q  Transition probality matrix (d x d);
 #'@param family    'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
 #'@param KendallTau   Kendall's rank correlation
 #'@param n    number of simulated vectors
 #'@param DoF degree of freedom only for the Student copula
-#@param DoF vector of degree of freedom (1 x d) or one degree of freedom (for all regime),
 #'
 #'@return \item{SimData}{Simulated Data}
 #'@return \item{MC}{Markov chain regimes}

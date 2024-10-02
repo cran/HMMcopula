@@ -39,5 +39,11 @@ GofMixtureCop(R, reg, family, max_iter, eps, n_sample, n_cores)
 \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
 }
 \description{
-This function performs goodness-of-fit test of a mixture bivariate copula model
+Goodness-of-fit test of a mixture bivariate copula model
+}
+\references{
+<doi::10.1002/cjs.11534>
+}
+\author{
+By Bruno Remillard, Nov 28, 2010
 }

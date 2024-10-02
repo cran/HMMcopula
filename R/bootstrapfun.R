@@ -1,17 +1,23 @@
-#'@title Bootstrap for the bivariate copula models
+#'@title Bootstrap function for a  bivariate copula models
+#'@description Bootstrapping function needed for parallel computing
 #'
 #'@param Q Weights vector (1 x reg or component);
 #'@param family    'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
 #'@param tau   Kendall's rank correlation
 #'@param n    number of simulated vectors
-#'@param DoF vector of degree of freedom (d x 1), only for the Student copula.
+#'@param df vector of degree of freedom (d x 1), only for the Student copula.
+#'@param max_iter maximum number of iterations for estimation
 #'@param eps       precision (e.g 0.00001);
-#'@param n_sample    number of bootstrap (e.g 1000);
 #'@param HMM    1 (if HMM) , 0 (if mixture);
 #'
 #'@author  Mamadou Yamar Thioub and Bruno Remillard, April 12, 2018
-#'
-#'
+#'@return \item{theta1}{Estimated copula parameters}
+#'@return \item{Q1}{Estimated transition matrix}
+#'@return \item{eta1}{Estimated probabilites for regimes}
+#'@return \item{tau1}{Estimated Kendall's tau}
+#'@return \item{dof1}{Estimated degrees of freedom for the Student copula}
+#'@return \item{Usim}{Estimated pseudo-observations}
+#'@return \item{cvm_sim}{Estimated Cramer-von Mises statistic}
 #'@export
 #'@keywords internal
 

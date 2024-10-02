@@ -15,5 +15,5 @@ RosenblattGaussian(u, rho)
 \item{R}{Rosenblatt transform}
 }
 \description{
-This function computes the Rosenblatt transform fot the Gaussian copula
+Computation of the Rosenblatt transform for the Gaussian copula
 }

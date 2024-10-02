@@ -1,6 +1,6 @@
 #'@title Spearman's rho
 #'
-#'@description This function estimates the Spearman's rho corresponding to a constrainted (matlab) parameter theta for a copula family.
+#'@description Value  of Spearman's rho corresponding to a constrainted (matlab) parameter theta for a copula family.
 #'
 #'@param family  'gaussian' , 't' , 'clayton' , 'frank' , 'gumbel'
 #'@param   theta  parameter of the copula according to CRAN copula package (except for Frank copula, where theta = log(theta_R_Package))

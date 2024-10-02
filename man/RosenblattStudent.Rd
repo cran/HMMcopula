@@ -17,5 +17,5 @@ RosenblattStudent(u, rho, nu)
 \item{R}{Rosenblatt transform}
 }
 \description{
-This function computes the Rosenblatt transform fot the Student copula
+Computation of the Rosenblatt transform for the Student copula
 }

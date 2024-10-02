@@ -15,5 +15,5 @@ ParamTau(family, tau)
 \item{alpha}{estimated unconstrainted parameter}
 }
 \description{
-This function computes the  unconstrainted parameter alpha for given Kendall's tau value
+Unconstrainted parameter for a given Kendall's tau.
 }

@@ -1,6 +1,6 @@
 #'@title Goodness-of-fit of Markov regime switching bivariate copula model
 #'
-#'@description This function performs goodness-of-fit test of a Markov regime switching bivariate copula model
+#'@description Goodness-of-fit test of a Markov regime switching bivariate copula model
 #'
 #'
 #'@param       R         (n x 2) data matrix that will be transformed to pseudo-observations
@@ -22,12 +22,11 @@
 #'@return \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 #'
 #'
-#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
+#'@references <doi::10.1002/cjs.11534>
 #'
 #@examples Q <- matrix(c(0.8, 0.2, 0.3, 0.7),2,2) ; kendallTau <- c(0.3 ,0.7) ;
 #data <- SimHMMCop(Q, 'clayton', kendallTau, 10)$SimData;
 #gof <- GofHMMCop(data,2,'clayton',10000,0.0001,1)
-#'
 #'
 #'
 #'@export
@@ -57,7 +56,7 @@ GofHMMCop <-function(R, reg, family, max_iter ,eps ,n_sample,n_cores){
     cvm_sim1[i] = result[[i]]$cvm_sim
   }
 
-  pvalue = 100*mean( na.omit(cvm_sim1 > cvm_est))
+  pvalue = 100*mean( cvm_sim1 > cvm_est)
 
   out = list(  pvalue =  pvalue, theta = theta, Q = Q, eta = eta, nu = nu, tau = tau, df = df, U = U, cvm_est = cvm_est, W = W)
   return(out)

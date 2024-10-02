@@ -41,5 +41,8 @@ GofHMMCop(R, reg, family, max_iter, eps, n_sample, n_cores)
 \item{W}{regime probabilities for the conditional distribution given the past Kendall's tau}
 }
 \description{
-This function performs goodness-of-fit test of a Markov regime switching bivariate copula model
+Goodness-of-fit test of a Markov regime switching bivariate copula model
+}
+\references{
+<doi::10.1002/cjs.11534>
 }

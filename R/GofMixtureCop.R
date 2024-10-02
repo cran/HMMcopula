@@ -1,6 +1,6 @@
 #'@title Goodness-of-fit of mixture bivariate copula model
 #'
-#'@description This function performs goodness-of-fit test of a mixture bivariate copula model
+#'@description Goodness-of-fit test of a mixture bivariate copula model
 #'
 #' @param       R         (nx2) data matrix (observations or residuals) that will be transformed to pseudo-observations
 #' @param       reg        number of regimes
@@ -18,11 +18,9 @@
 #'@return \item{tau}{estimated Kendall tau for each regime}
 #'@return \item{U}{(n x 2) matrix of Rosenblatt transforms}
 #'@return \item{cvm}{Cramer-von-Mises statistic for goodness-of-fit}
-# @author  By Bruno Remillard, Nov 28, 2010
+#'@author  By Bruno Remillard, Nov 28, 2010
 #'
-#@references https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3271474
-#'
-#'
+#'@references <doi::10.1002/cjs.11534>
 #'
 #'@export
 GofMixtureCop<-function(R,reg,family,max_iter,eps,n_sample,n_cores){
@@ -56,7 +54,7 @@ GofMixtureCop<-function(R,reg,family,max_iter,eps,n_sample,n_cores){
   #}
 
   #output
-  pvalue = 100*mean( na.omit(cvm_sim1 > cvm_est))
+  pvalue = 100*mean( cvm_sim1 > cvm_est)
 
   out = list( pvalue=  pvalue, theta=theta, Q=Q, eta=eta, tau=tau, df=df, U=U, cvm_est=cvm_est)
   return(out)

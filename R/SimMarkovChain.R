@@ -1,12 +1,13 @@
-#'Markov chain simulation
+#'@title Markov chain simulation
 #'
-#'@description This function generates a Markov chain X(1), ..., X(n) with transition matrix Q,
-#' starting from a state eta0 or the uniform distribution on {1,..., r}
+#'@description Simulation of  n consecutive  values of a Markov chain with transition matrix Q, 
+#' starting from a state eta0 or the uniform distribution on the set 1,..., r.
 #'
-#'@param  Q Transition probality matrix (d x d)
+#'@param  Q Transition probability matrix (d x d)
 #'@param  n number of simulated vectors
 #'@param  eta0 variable eta
 #'
+#'@return \item{x}{Simulated Markov chain sequence}
 #'@export
 #'
 SimMarkovChain<-function(Q,n,eta0){

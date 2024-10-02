@@ -13,5 +13,5 @@ dilog(x)
 \item{out}{dilogarithm}
 }
 \description{
-This function computes the dilogarithm of a number.
+Computation of the dilogarithm function by nemerical integration.
 }

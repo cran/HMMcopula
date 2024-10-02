@@ -1,6 +1,6 @@
 #'@title Cramer-von Mises statistic SnB for GOF based on the Rosenblatt transform
 #'
-#'@description This function computes the Cramer-von Mises statistic SnB for GOF based on the Rosenblatt transform
+#'@description Computation of the Cramer-von Mises statistic SnB for GOF based on the Rosenblatt transform
 #'
 #'@param E   (n x d) matrix of pseudos-observations (normalized ranks)
 #'

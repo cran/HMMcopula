@@ -25,7 +25,7 @@ SimMixtureCop(Q, family, KendallTau, n, DoF)
 \item{alpha}{parameters alpha}
 }
 \description{
-This function simulates observation from a bivariate mixture copula model
+Simulation of observations from a bivariate mixture copula model
 }
 \examples{
 Q <- matrix(c(0.8, 0.2),1,2) ; kendallTau <- c(0.3 ,0.7) ;

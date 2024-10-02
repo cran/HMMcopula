@@ -1,6 +1,6 @@
 #'@title Rosenblatt transform for Gumbel copula
 #'
-#'@description This function computes the Rosenblatt transform fot the Gumbel copula
+#'@description Computation of the Rosenblatt transform for Gumbel's copula
 #'
 #'@param U   (n x d) matrix of pseudos-observations (normalized ranks)
 #'@param theta parameter of the Gumbel copula

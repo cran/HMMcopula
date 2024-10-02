@@ -15,5 +15,5 @@ ParamCop(family, alpha)
 \item{theta}{matlab parameters}
 }
 \description{
-This function computes the parameter of the copula according to CRAN copula package (except for Frank copula, where theta = log(theta_R_Package)), corresponding to the unconstrainted parameters alpha.
+Parameters of a copula according to CRAN copula package (except for Frank copula, where theta = log(theta_R_Package)), corresponding to the unconstrainted parameters alpha.
 }

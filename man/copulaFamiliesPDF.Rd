@@ -2,9 +2,7 @@
 % Please edit documentation in R/copulaFamiliesPDF.R
 \name{copulaFamiliesPDF}
 \alias{copulaFamiliesPDF}
-\title{COPULAPDF Probability density function for a copula.
-
-COPULAPDF  probability density function for a copula with linear correlation parameters RHO and}
+\title{COPULAPDF Probability density function for a copula.}
 \usage{
 copulaFamiliesPDF(family, u, ...)
 }
@@ -35,8 +33,6 @@ Y = COPULAPDF('Gaussian',U,RHO) returns the probability density of the
   'Gumbel'.  U is an N-by-2 matrix of values in [0,1].
 }
 \description{
-COPULAPDF Probability density function for a copula.
-
 COPULAPDF  probability density function for a copula with linear correlation parameters RHO and
 }
 \examples{
